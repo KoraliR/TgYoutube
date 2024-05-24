@@ -261,5 +261,5 @@ async def make_users(user_id):
 
 
 async def del_temp_files(name_of_file):
-    os.remove(PATH + "\\Temp_video\\" + name_of_file + "temp.mp4")
-    os.remove(PATH + "\\Temp_audio\\" + name_of_file + "temp.mp3")
+    os.remove(PATH + "/Temp_video/" + name_of_file + "temp.mp4")
+    os.remove(PATH + "/Temp_audio/" + name_of_file + "temp.mp3")
