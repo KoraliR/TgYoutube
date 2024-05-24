@@ -53,10 +53,10 @@ async def get_name(video_id, user_id):
 
 
 async def mixing(name_of_file):
-    video = mp.VideoFileClip(PATH + "\\Temp_video\\" + name_of_file + "temp.mp4")
-    audio = mp.AudioFileClip(PATH + "\\Temp_audio\\" + name_of_file + "temp.mp3")
+    video = mp.VideoFileClip(PATH + "/Temp_video/" + name_of_file + "temp.mp4")
+    audio = mp.AudioFileClip(PATH + "/Temp_audio/" + name_of_file + "temp.mp3")
     video = video.set_audio(audio)
-    video.write_videofile(PATH + "\\" + name_of_file + ".mp4")
+    video.write_videofile(PATH + "/" + name_of_file + ".mp4")
     print("MP4#NAME", PATH + "\\Temp_video\\" + name_of_file + "temp.mp4")
     print("MP3#NAME",PATH + "\\Temp_audio\\" + name_of_file + "temp.mp3")
     print("exit", PATH + "\\" + name_of_file + ".mp4")
@@ -65,12 +65,12 @@ async def mixing(name_of_file):
 
 
 async def audio_download(name_of_file, yt_obj):
-    yt_obj.streams.filter(only_audio=True).order_by('abr').desc().first().download(output_path=PATH + "\Temp_audio",
+    yt_obj.streams.filter(only_audio=True).order_by('abr').desc().first().download(output_path=PATH + "/Temp_audio",
                                                                                            filename=name_of_file + "temp.mp3")
 
 async def another_download(flag_resolution, video_id, user_id, youtube_object): #обавить сведение звука и видео
     name_of_file = await get_name(video_id, user_id)
-    for_video = "\Temp_video"
+    for_video = "/Temp_video"
     if flag_resolution == "a.144":
         youtube_object.streams.filter(adaptive=True, file_extension='mp4', res="144p").order_by(
             'resolution').desc().first().download(
@@ -156,7 +156,7 @@ async def my_logger(user_id, user_name, yt_obj, flag_search=False):
         log_string += f"    {name}"
     except:
         pass
-    with open(way_to_home + "\\log.txt", "a") as file:
+    with open(way_to_home + "/log.txt", "a") as file:
         file.write(log_string)
 
 async def search_youtube(search_request):
@@ -245,7 +245,7 @@ async def availbale_formats_information(yt_obj, availbale_res, another_available
 def get_users():
     print("GET_USERS")
     way = os.getcwd()
-    name = "\\users.txt"
+    name = "/users.txt"
     with open(way + name, "r") as file:
         for user in file:
             USERS.add(int(str(user).replace(";", "")))
@@ -255,7 +255,7 @@ def get_users():
 async def make_users(user_id):
     way_to_home = os.getcwd()
     users_string = user_id
-    with open(way_to_home + "\\users.txt", "a") as file:
+    with open(way_to_home + "/users.txt", "a") as file:
         file.write(str(users_string) + ';')
 
 
