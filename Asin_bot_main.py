@@ -60,7 +60,7 @@ async def manual_download(video_id, caal):
 
 async def send(name_of_file, user_id, yt_obj):
     flag_type = name_of_file.split(".")[-1]
-    path_to_file = PATH + "\\"+ name_of_file
+    path_to_file = PATH + "/"+ name_of_file
     title = f"{yt_obj.title}\n#{str(yt_obj.author).replace(' ', '')}\n\n@skachattbot"
     print("INFO", name_of_file, user_id, yt_obj, "STOPINFO", sep="\n")
     if flag_type == "mp4":
