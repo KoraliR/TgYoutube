@@ -7,7 +7,7 @@ from Asin_pytube_main import availbale_formats_information, make_users, another_
 import logging
 from Asin_pytube_main import another_download, get_weight, get_another_weight
 
-ADMIN_ID = 1310436261
+ADMIN_ID = 
 
 #USERS = get_users()
 #USERS = set()
