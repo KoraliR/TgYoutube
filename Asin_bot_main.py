@@ -17,7 +17,7 @@ ADMIN_ID = 1310436261
 pytube_logger = logging.getLogger('pytube')
 pytube_logger.setLevel(logging.ERROR)
 
-bot = AsyncTeleBot('7154888656:AAFMHu-3ImBYGhybMWw5nsH1ry7B8L9GIwg')
+bot = AsyncTeleBot('')
 #main_dictionaries
 dict_yt_obj = dict()
 dict_messeges_to_del_inline = dict()
